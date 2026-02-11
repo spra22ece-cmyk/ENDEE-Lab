@@ -1,69 +1,16 @@
-# Endee RAG Assistant
+# React + Vite
 
-A high-performance "Smart Document Assistant" built using **Endee Vector Database**, **FastAPI**, and **React**.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-![Endee RAG](https://via.placeholder.com/800x400?text=Endee+RAG+Dashboard)
+Currently, two official plugins are available:
 
-## 🚀 Features
-- **Project-Based Evaluation**: Built specifically for the Endee Labs evaluation.
-- **Endee Vector DB**: Uses Endee for ultra-fast vector similarity search.
-- **RAG (Retrieval Augmented Generation)**: Indexes documents and retrieves relevant context for queries.
-- **Dual Mode**: Switch between "Search Engine" mode (raw results) and "AI Chat" mode (Gemini powered).
-- **Modern UI**: Dark-themed, responsive React interface.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🛠 Tech Stack
-- **Database**: [Endee](https://github.com/EndeeLabs/endee) (Docker)
-- **Backend**: Python (FastAPI, Sentence-Transformers, Google-GenAI)
-- **Frontend**: React (Vite, TailwindCSS)
+## React Compiler
 
-## 📦 Installation
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-### Prerequisites
-- Docker & Docker Compose
-- Python 3.8+
-- Node.js 16+
+## Expanding the ESLint configuration
 
-### 1. Start Endee Database
-```bash
-docker-compose up -d
-```
-This starts the Endee server on port `8081`.
-
-### 2. Setup Environment
-Create a `.env` file in the root directory:
-```bash
-cp .env.example .env
-# Edit .env and add your GEMINI_API_KEY (Optional for AI Chat)
-```
-
-### 3. Setup Backend
-```bash
-pip install -r backend/requirements.txt
-python -m uvicorn backend.main:app --reload
-```
-The backend API will run at `http://localhost:8000`.
-
-### 4. Setup Frontend
-```bash
-cd frontend
-npm install
-npm run dev
-```
-The frontend UI will be available at `http://localhost:5173`.
-
-## 📖 Usage
-1. Open the web interface at `http://localhost:5173`.
-2. Click **Upload Document** to index a PDF or Text file.
-3. Toggle between **Search** and **AI Chat** modes.
-4. Type your question in the chat bar.
-
-## 📂 Project Structure
-```
-├── backend/            # FastAPI Application
-│   ├── main.py         # API Endpoints
-│   ├── rag.py          # Endee Service Wrapper
-├── frontend/           # React Application
-│   ├── src/            # Components & Styles
-├── docker-compose.yml  # Endee Service Config
-└── README.md           # Documentation
-```
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
